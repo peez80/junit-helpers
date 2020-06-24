@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "{{method}}",
+    "urlPattern": "{{urlPattern}}"
+  },
+  "response": {
+    "body": "{{responseBody}}",
+    "headers": {
+      "Content-Type": "{{responseContentType}}"
+    },
+    "status": {{responseStatus}}
+}
+}
