@@ -3,8 +3,8 @@ plugins {
     id 'maven'
 }
 
-group 'com.bmw.mobility.junit'
-version '1.3.4'
+group 'de.stiffi.dev.testing'
+version '2.0.0'
 
 sourceCompatibility = 1.8
 
