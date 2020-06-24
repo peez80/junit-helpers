@@ -64,38 +64,3 @@ test {
     }
 }
 
-uploadArchives {
-
-    repositories {
-        mavenDeployer {
-            String systemProxy = String.valueOf(System.getenv("http_proxy"))
-            snapshotRepository(url: "https://odmartifactory.jfrog.io/odmartifactory/odm-cscs/") {
-                authentication(userName: odmArtifactoryUsername, password: odmArtifactoryPassword)
-                if (systemProxy != null) {
-                    URI proxyURI = URI.create(systemProxy)
-                    String user = null
-                    String pass = null
-                    if (proxyURI.getUserInfo() != null) {
-                        user = proxyURI.getUserInfo().split(":", 2)[0]
-                        pass = proxyURI.getUserInfo().split(":", 2)[1]
-                    }
-                    proxy(host: proxyURI.getHost(), port: proxyURI.getPort(), type: proxyURI.getScheme(), userName: user, password: pass)
-                }
-            }
-            repository(url: "https://odmartifactory.jfrog.io/odmartifactory/odm-cscs/") {
-                authentication(userName: odmArtifactoryUsername, password: odmArtifactoryPassword)
-                if (systemProxy != null) {
-                    URI proxyURI = URI.create(systemProxy)
-                    String user = null
-                    String pass = null
-                    if (proxyURI.getUserInfo() != null) {
-                        user = proxyURI.getUserInfo().split(":", 2)[0]
-                        pass = proxyURI.getUserInfo().split(":", 2)[1]
-                    }
-                    proxy(host: proxyURI.getHost(), port: proxyURI.getPort(), type: proxyURI.getScheme(), userName: user, password: pass)
-                }
-            }
-        }
-    }
-}
-
